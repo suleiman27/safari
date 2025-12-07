@@ -3,108 +3,306 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>EcoQuest Safari — Unforgettable Safaris in Kenya</title>
-
-  <meta name="description" content="Unforgettable safaris in Kenya tailored by local experts. Book Masai Mara, Amboseli, Tsavo, Samburu, and Diani Beach + Safari packages with a licensed Kenyan tour operator.">
-
-  <meta property="og:title" content="EcoQuest Safari">
-  <meta property="og:description" content="Discover Kenya's top safari destinations with trusted local guides.">
-  <meta property="og:type" content="website">
-
+  <title>EcoQuest Safari</title>
+  <meta name="description" content="Unforgettable safaris in Kenya tailored by local experts.">
   <link rel="stylesheet" href="styles.css">
-  <script defer src="script.js"></script>
 </head>
-
 <body>
 
-  <!-- HEADER -->
-  <header class="navbar">
-    <div class="logo">EcoQuest Safari</div>
+<header class="site-header">
+  <nav class="nav container">
+    <div class="brand">Safari <span class="accent">Tours</span></div>
 
-    <nav class="nav-links">
-      <a href="index.html">Home</a>
+    <button id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">☰</button>
 
-      <!-- Packages Dropdown -->
-      <div class="dropdown">
-        <button class="dropbtn">Packages ▾</button>
-        <div class="dropdown-content">
-          <a href="masai-mara.html">Masai Mara Safari</a>
-          <a href="amboseli.html">Amboseli Safari</a>
-          <a href="tsavo.html">Tsavo East & West</a>
-          <a href="samburu.html">Samburu</a>
-          <a href="nakuru.html">Lake Nakuru</a>
-          <a href="diani.html">Diani Beach + Safari</a>
+    <ul class="nav-links" id="nav-links">
+
+      <li><a href="#home">Home</a></li>
+
+      <!-- ⭐ ADDED DROPDOWN PROPERLY -->
+      <li class="dropdown">
+        <a href="#packages" class="dropbtn">Packages ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="#packages">3-Day Safaris</a></li>
+          <li><a href="masaimara.html">Masai Mara</a></li>
+          <li><a href="amboseli.html">Amboseli</a></li>
+          <li><a href="tsavo.html">Tsavo East & West</a></li>
+          <li><a href="samburu.html">Samburu</a></li>
+          <li><a href="diani.html">Diani + Safari</a></li>
+        </ul>
+      </li>
+
+      <li><a href="#destinations">Destinations</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <button class="btn btn-outline" id="lang-toggle">EN</button>
+      <a class="btn btn-primary" href="#booking">Book Your Safari</a>
+    </div>
+  </nav>
+</header>
+
+
+<!-- HERO SECTION -->
+<section id="home" class="hero">
+  <div class="hero-overlay"></div>
+
+  <div class="hero-slideshow">
+    <img src="images/image1.jpeg" alt="Safari Image 1" class="slide active" loading="lazy">
+    <img src="images/image5.jpeg" alt="Safari Image 5" class="slide" loading="lazy">
+  </div>
+
+  <div class="hero-content container">
+    <h1>Unforgettable Safaris in Kenya — Tailored by Local Experts</h1>
+    <p class="lead">
+      Experience the Big Five, majestic elephants, and the Great Migration — comfort, safety and local knowledge.
+    </p>
+
+    <div class="ctas">
+      <a class="btn btn-primary" href="#booking">Book Your Safari</a>
+      <button class="btn btn-secondary" id="quote-btn">Get a Free Quote</button>
+    </div>
+
+    <p class="small-intro">
+      We are a licensed Kenyan tour operator with experienced guides and 24/7 support.
+    </p>
+  </div>
+</section>
+
+
+
+<!-- ============================= -->
+<!-- MAIN CONTENT (UNCHANGED)     -->
+<!-- ============================= -->
+
+<main>
+
+  <!-- SAFARI PACKAGES -->
+  <section id="packages" class="safari-section section container">
+    <h2 class="section-title">Safari Packages</h2>
+    <div class="safari-grid">
+
+      <div class="safari-card">
+        <img src="images/amboseli1.jpg" alt="3 Days Tsavo West & Amboseli" loading="lazy">
+        <h3>3 Days Safari: Tsavo West & Amboseli</h3>
+        <p>The definitive southern Kenya safari with Mt. Kilimanjaro views and giant tuskers.</p>
+        <div class="price-box">
+          <span class="net">Net: $1,282</span>
+          <span class="sell">Selling: $1,474</span>
         </div>
       </div>
 
-      <a href="#">About</a>
-      <a href="#">Contact</a>
-    </nav>
-  </header>
+      <div class="safari-card">
+        <img src="images/tsavoeast.jpg" alt="Tsavo East & Taita Hills" loading="lazy">
+        <h3>3 Days Safari: Tsavo East & Taita Hills</h3>
+        <p>Red elephants of Tsavo East + night-viewing at Salt Lick.</p>
+        <div class="price-box">
+          <span class="net">Net: $1,250</span>
+          <span class="sell">Selling: $1,438</span>
+        </div>
+      </div>
 
+      <div class="safari-card">
+        <img src="images/ngutuni.jpg" alt="Tsavo West & Ngutuni" loading="lazy">
+        <h3>3 Days Safari: Tsavo West & Ngutuni</h3>
+        <p>Volcanic landscapes + night game drives in Ngutuni Conservancy.</p>
+        <div class="price-box">
+          <span class="net">Net: $1,194</span>
+          <span class="sell">Selling: $1,373</span>
+        </div>
+      </div>
 
-  <!-- HERO SECTION -->
-  <section class="hero">
+      <div class="safari-card">
+        <img src="images/amboseli2.jpg" alt="Taita Hills & Amboseli" loading="lazy">
+        <h3>3 Days Safari: Taita Hills & Amboseli</h3>
+        <p>Floodlit night wildlife + Kilimanjaro elephants.</p>
+        <div class="price-box">
+          <span class="net">Net: $1,270</span>
+          <span class="sell">Selling: $1,461</span>
+        </div>
+      </div>
 
-    <!-- LEFT: Images -->
-    <div class="hero-images">
-      <img src="image1.jpg" alt="Safari Image 1">
-      <img src="image2.jpg" alt="Safari Image 2">
+      <div class="safari-card">
+        <img src="images/nnp.jpg" alt="Amboseli & Nairobi NP" loading="lazy">
+        <h3>3 Days Safari: Amboseli & Nairobi NP</h3>
+        <p>City wildlife combined with Amboseli’s tuskers.</p>
+        <div class="price-box">
+          <span class="net">Net: $1,310</span>
+          <span class="sell">Selling: $1,507</span>
+        </div>
+      </div>
+
+      <div class="safari-card">
+        <img src="images/nakuru.jpg" alt="Nakuru Naivasha Hell's Gate" loading="lazy">
+        <h3>3 Days Safari: Nakuru + Naivasha + Hell’s Gate</h3>
+        <p>Rhinos, flamingos, boat safari, and gorge hiking.</p>
+        <div class="price-box">
+          <span class="net">Net: $1,250</span>
+          <span class="sell">Selling: $1,438</span>
+        </div>
+      </div>
+
+      <div class="safari-card">
+        <img src="images/masaimara.jpg" alt="Masai Mara" loading="lazy">
+        <h3>3 Days Safari: Maasai Mara</h3>
+        <p>Dedicated Big Cat safari in Kenya’s top park.</p>
+        <div class="price-box">
+          <span class="net">Net: $1,350</span>
+          <span class="sell">Selling: $1,553</span>
+        </div>
+      </div>
+
+      <div class="safari-card">
+        <img src="images/samburu.jpg" alt="Samburu" loading="lazy">
+        <h3>3 Days Safari: Samburu</h3>
+        <p>Search for the Samburu Special Five in a northern wilderness.</p>
+        <div class="price-box">
+          <span class="net">Net: $1,305</span>
+          <span class="sell">Selling: $1,501</span>
+        </div>
+      </div>
+
     </div>
-
-    <!-- RIGHT: Text -->
-    <div class="hero-text">
-      <h1>Unforgettable Safaris in Kenya — Tailored by Local Experts</h1>
-      <p>
-        Witness the Big Five, stunning landscapes, and the legendary Great Migration.
-        Travel with professional guides who ensure safety, comfort, and authentic experiences.
-      </p>
-
-      <button class="cta">Book Your Safari</button>
-
-      <p class="subtext">
-        Licensed Kenyan tour operator • Experienced safari guides • 24/7 customer support
-      </p>
-    </div>
-
   </section>
 
 
-  <!-- FEATURE SECTION -->
-  <section class="features">
-    <h2>Why Travel With Us</h2>
-    <div class="feature-grid">
-
-      <div class="feature-box">
-        <h3>✔ Expert Local Guides</h3>
-        <p>Our team knows the parks inside out — guaranteeing the best wildlife sightings.</p>
-      </div>
-
-      <div class="feature-box">
-        <h3>✔ Customizable Packages</h3>
-        <p>From budget to luxury, we tailor every safari to your preferences.</p>
-      </div>
-
-      <div class="feature-box">
-        <h3>✔ Comfortable Transport</h3>
-        <p>Travel in clean, well-maintained 4x4 safari vehicles.</p>
-      </div>
-
-      <div class="feature-box">
-        <h3>✔ Licensed & Trusted Operator</h3>
-        <p>We are fully registered and operate legally within Kenya.</p>
-      </div>
-
+  <!-- DESTINATIONS -->
+  <section id="destinations" class="section container">
+    <h2>Popular Destinations</h2>
+    <div class="dest-cards">
+      <div class="dest-card"><img src="images/masaimara1.jpg" alt="Masai Mara"></div>
+      <div class="dest-card"><img src="images/amboseli1.jpg" alt="Amboseli"></div>
+      <div class="dest-card"><img src="images/tsavo1.jpg" alt="Tsavo"></div>
+      <div class="dest-card"><img src="images/diani1.jpg" alt="Diani Beach"></div>
     </div>
+  </section>
+
+
+  <!-- BOOKING FORM -->
+  <section id="booking" class="section container">
+    <h2>Book Your Safari / Inquiry</h2>
+    <form id="booking-form" class="booking-form">
+
+      <div class="row two">
+        <input name="name" type="text" placeholder="Full Name" required>
+        <input name="email" type="email" placeholder="Email Address" required>
+      </div>
+
+      <div class="row two">
+        <input name="phone" type="tel" placeholder="Phone / WhatsApp" required>
+        <input name="travellers" type="number" min="1" placeholder="Number of travellers" required>
+      </div>
+
+      <input name="ages" type="text" placeholder="Ages (e.g., 34, 28, 6)">
+
+      <div class="row two">
+        <label>Travel Dates</label>
+        <input name="travelDate" type="date" required>
+        <select name="budget" required>
+          <option value="">Preferred Budget</option>
+          <option value="budget">Budget</option>
+          <option value="mid">Mid-range</option>
+          <option value="luxury">Luxury</option>
+        </select>
+      </div>
+
+      <select name="destination" required>
+        <option value="">Preferred Destination</option>
+        <option>Masai Mara</option>
+        <option>Amboseli</option>
+        <option>Tsavo East</option>
+        <option>Tsavo West</option>
+        <option>Lake Nakuru</option>
+        <option>Samburu</option>
+        <option>Diani + Safari</option>
+        <option>Nairobi National Park</option>
+      </select>
+
+      <textarea name="notes" placeholder="Special Requests (optional)"></textarea>
+
+      <div class="form-actions">
+        <button type="submit" class="btn btn-primary">Submit Inquiry</button>
+        <button type="button" class="btn btn-outline" id="quick-estimate">Get Quick Estimate</button>
+      </div>
+
+    </form>
+  </section>
+
+
+  <!-- WHY CHOOSE US -->
+  <section id="why-us" class="section container">
+    <h2>Why Choose Us</h2>
+    <div class="why-grid">
+      <div class="why-card">Licensed Tour Operator / KWS Certified</div>
+      <div class="why-card">Experienced Guides</div>
+      <div class="why-card">Local Knowledge</div>
+      <div class="why-card">Custom Itineraries</div>
+      <div class="why-card">Fast Responses (24/7)</div>
+      <div class="why-card">Transparent Pricing</div>
+    </div>
+  </section>
+
+
+  <!-- GALLERY -->
+  <section id="gallery" class="section container">
+    <h2>Gallery</h2>
+    <div class="gallery-grid">
+      <img src="images/gallery1.jpg" alt="Gallery Image 1" loading="lazy">
+      <img src="images/gallery2.jpg" alt="Gallery Image 2" loading="lazy">
+      <img src="images/gallery3.jpg" alt="Gallery Image 3" loading="lazy">
+      <img src="images/gallery4.jpg" alt="Gallery Image 4" loading="lazy">
+    </div>
+  </section>
+
+
+  <!-- ABOUT -->
+  <section id="about" class="section container">
+    <h2>About Us</h2>
+    <div class="about-grid">
+      <img src="images/guide.jpg" alt="Guide" class="about-img">
+      <div>
+        <h3>Who We Are</h3>
+        <p>We are licensed Kenyan tour operators with years of experience guiding guests through Kenya's amazing parks.</p>
+        <h4>Mission & Values</h4>
+        <p>Authenticity, safety, conservation and local empowerment.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- REVIEWS -->
+  <section id="reviews" class="section container">
+    <h2>Reviews & Testimonials</h2>
+    <div id="reviews-list" class="reviews-list"></div>
   </section>
 
 
   <!-- FOOTER -->
-  <footer class="footer">
-    <p>© 2025 EcoQuest Safari — All Rights Reserved</p>
-    <p>Made with ❤️ in Kenya</p>
-  </footer>
+  <section class="section container small">
+    <a href="terms.html">Terms & Conditions</a> |
+    <a href="privacy.html">Privacy Policy</a>
+  </section>
 
+</main>
+
+
+<footer class="site-footer">
+  <div class="container">
+    <div>© <span id="year"></span> Safari Tours & Travel</div>
+    <div><a href="mailto:info@safaritours.com">info@safaritours.com</a> • +254 700 000000</div>
+  </div>
+</footer>
+
+
+<!-- WHATSAPP FLOAT -->
+<a id="wa-float" class="wa-float"
+   href="https://wa.me/254700000000?text=Hi%20I'm%20interested%20in%20a%20safari"
+   target="_blank" aria-label="Chat on WhatsApp">💬</a>
+
+
+<script src="script.js"></script>
 </body>
 </html>
