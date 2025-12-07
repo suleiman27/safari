@@ -3,153 +3,108 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>EcoQuest Safari</title>
-  <meta name="description" content="Unforgettable safaris in Kenya tailored by local experts.">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <header class="site-header">
-    <nav class="nav container">
-      <div class="brand">Safari <span class="accent">Tours</span></div>
-      <button id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">☰</button>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#packages">Packages</a></li>
-        <li><a href="#destinations">Destinations</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <div class="nav-actions">
-        <a class="btn btn-primary" href="#booking">Book Your Safari</a>
-      </div>
-    </nav>
 
-    <!-- Hero Section with slideshow -->
-    <section id="home" class="hero">
-      <div class="hero-overlay"></div>
-      <div class="hero-slideshow">
-        <img src="images/image1.jpeg" alt="Safari Image 1" class="slide active">
-        <img src="images/image5.jpeg" alt="Safari Image 5" class="slide">
-        <img src="images/image6.jpeg" alt="Safari Image 6" class="slide">
-      </div>
-      <div class="hero-content container">
-        <h1>Unforgettable Safaris in Kenya — Tailored by Local Experts</h1>
-        <p class="lead">Experience the Big Five, majestic elephants, and the Great Migration.</p>
-        <div class="ctas">
-          <a class="btn btn-primary" href="#booking">Book Your Safari</a>
-          <button class="btn btn-secondary">Get a Free Quote</button>
+  <title>EcoQuest Safari — Unforgettable Safaris in Kenya</title>
+
+  <meta name="description" content="Unforgettable safaris in Kenya tailored by local experts. Book Masai Mara, Amboseli, Tsavo, Samburu, and Diani Beach + Safari packages with a licensed Kenyan tour operator.">
+
+  <meta property="og:title" content="EcoQuest Safari">
+  <meta property="og:description" content="Discover Kenya's top safari destinations with trusted local guides.">
+  <meta property="og:type" content="website">
+
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="navbar">
+    <div class="logo">EcoQuest Safari</div>
+
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+
+      <!-- Packages Dropdown -->
+      <div class="dropdown">
+        <button class="dropbtn">Packages ▾</button>
+        <div class="dropdown-content">
+          <a href="masai-mara.html">Masai Mara Safari</a>
+          <a href="amboseli.html">Amboseli Safari</a>
+          <a href="tsavo.html">Tsavo East & West</a>
+          <a href="samburu.html">Samburu</a>
+          <a href="nakuru.html">Lake Nakuru</a>
+          <a href="diani.html">Diani Beach + Safari</a>
         </div>
       </div>
-    </section>
+
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </nav>
   </header>
 
-  <main>
-    <!-- Packages / Highlights -->
-    <section id="packages" class="section container">
-      <h2>Safari Packages</h2>
-      <div class="highlights-grid">
-        <img src="images/image3.jpeg" alt="Safari Highlight 1">
-        <img src="images/image4.jpeg" alt="Safari Highlight 2">
-        <img src="images/image5.jpeg" alt="Safari Highlight 3">
-        <img src="images/image6.jpeg" alt="Safari Highlight 4">
-      </div>
-    </section>
 
-    <!-- Destinations Overview -->
-    <section id="destinations" class="section container">
-      <h2>Popular Destinations</h2>
-      <div class="dest-cards">
-        <img src="images/image7.jpeg" alt="Masai Mara 1">
-        <img src="images/image8.jpeg" alt="Masai Mara 2">
-        <img src="images/image9.jpeg" alt="Masai Mara 3">
-        <img src="images/image10.jpeg" alt="Masai Mara 4">
-        <img src="images/image11.jpeg" alt="Amboseli 1">
-        <img src="images/image12.jpeg" alt="Amboseli 2">
-        <img src="images/image13.jpeg" alt="Amboseli 3">
-        <img src="images/image14.jpeg" alt="Tsavo East">
-        <img src="images/image15.jpeg" alt="Tsavo West">
-      </div>
-    </section>
+  <!-- HERO SECTION -->
+  <section class="hero">
 
-    <!-- Wildlife / Activities Gallery -->
-    <section id="wildlife" class="section container">
-      <h2>Wildlife & Activities</h2>
-      <div class="wildlife-grid">
-        <img src="images/image27.jpeg" alt="Lions">
-        <img src="images/image28.jpeg" alt="Elephants">
-        <img src="images/image29.jpeg" alt="Giraffes">
-        <img src="images/image30.jpeg" alt="Safari Vehicle">
-        <img src="images/image31.jpeg" alt="Birdlife">
-        <img src="images/image32.jpeg" alt="Tourists">
-      </div>
-    </section>
-
-    <!-- Accommodation -->
-    <section id="accommodation" class="section container">
-      <h2>Accommodation Options</h2>
-      <div class="accommodation-grid">
-        <img src="images/image33.jpeg" alt="Lodge 1">
-        <img src="images/image34.jpeg" alt="Lodge 2">
-        <img src="images/image35.jpeg" alt="Lodge 3">
-      </div>
-    </section>
-
-    <!-- Testimonials / Reviews -->
-    <section id="reviews" class="section container">
-      <h2>Testimonials</h2>
-      <div class="reviews-grid">
-        <img src="images/image36.jpeg" alt="Happy tourists 1">
-        <img src="images/image37.jpeg" alt="Happy tourists 2">
-        <img src="images/image38.jpeg" alt="Happy tourists 3">
-      </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section id="gallery" class="section container">
-      <h2>Gallery</h2>
-      <div class="gallery-grid">
-        <img src="images/image16.jpeg" alt="Gallery Image 1">
-        <img src="images/image17.jpeg" alt="Gallery Image 2">
-        <img src="images/image18.jpeg" alt="Gallery Image 3">
-        <img src="images/image19.jpeg" alt="Gallery Image 4">
-        <img src="images/image20.jpeg" alt="Gallery Image 5">
-        <img src="images/image21.jpeg" alt="Gallery Image 6">
-        <img src="images/image22.jpeg" alt="Gallery Image 7">
-        <img src="images/image23.jpeg" alt="Gallery Image 8">
-        <img src="images/image24.jpeg" alt="Gallery Image 9">
-        <img src="images/image25.jpeg" alt="Gallery Image 10">
-        <img src="images/image26.jpeg" alt="Gallery Image 11">
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <div>© <span id="year"></span> EcoQuest Safari</div>
-      <div><a href="mailto:info@safaritours.com">info@safaritours.com</a> • +254 700 000000</div>
+    <!-- LEFT: Images -->
+    <div class="hero-images">
+      <img src="image1.jpg" alt="Safari Image 1">
+      <img src="image2.jpg" alt="Safari Image 2">
     </div>
+
+    <!-- RIGHT: Text -->
+    <div class="hero-text">
+      <h1>Unforgettable Safaris in Kenya — Tailored by Local Experts</h1>
+      <p>
+        Witness the Big Five, stunning landscapes, and the legendary Great Migration.
+        Travel with professional guides who ensure safety, comfort, and authentic experiences.
+      </p>
+
+      <button class="cta">Book Your Safari</button>
+
+      <p class="subtext">
+        Licensed Kenyan tour operator • Experienced safari guides • 24/7 customer support
+      </p>
+    </div>
+
+  </section>
+
+
+  <!-- FEATURE SECTION -->
+  <section class="features">
+    <h2>Why Travel With Us</h2>
+    <div class="feature-grid">
+
+      <div class="feature-box">
+        <h3>✔ Expert Local Guides</h3>
+        <p>Our team knows the parks inside out — guaranteeing the best wildlife sightings.</p>
+      </div>
+
+      <div class="feature-box">
+        <h3>✔ Customizable Packages</h3>
+        <p>From budget to luxury, we tailor every safari to your preferences.</p>
+      </div>
+
+      <div class="feature-box">
+        <h3>✔ Comfortable Transport</h3>
+        <p>Travel in clean, well-maintained 4x4 safari vehicles.</p>
+      </div>
+
+      <div class="feature-box">
+        <h3>✔ Licensed & Trusted Operator</h3>
+        <p>We are fully registered and operate legally within Kenya.</p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© 2025 EcoQuest Safari — All Rights Reserved</p>
+    <p>Made with ❤️ in Kenya</p>
   </footer>
-
-  <!-- Hero Slideshow Script -->
-  <script>
-    const slides = document.querySelectorAll('.hero-slideshow .slide');
-    let current = 0;
-
-    function showSlide(index) {
-      slides.forEach((slide, i) => {
-        slide.classList.toggle('active', i === index);
-      });
-    }
-
-    function nextSlide() {
-      current = (current + 1) % slides.length;
-      showSlide(current);
-    }
-
-    setInterval(nextSlide, 4000);
-  </script>
-  <script src="script.js"></script>
 
 </body>
 </html>
