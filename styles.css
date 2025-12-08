@@ -1,83 +1,141 @@
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #fff;
-  color: #222;
-}
+/* ---------- Reset & Base ---------- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html,body { height: 100%; }
+body { font-family: Arial, Helvetica, sans-serif; color: #222; line-height: 1.5; -webkit-font-smoothing: antialiased; }
+.container { width: 92%; max-width: 1200px; margin: 0 auto; }
 
-.container { width: 90%; max-width: 1200px; margin: auto; }
+/* ---------- Utility ---------- */
+.sr-only { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
 
-/* NAVIGATION */
-.site-header { background: #fff; border-bottom: 1px solid #ddd; position: sticky; top:0; z-index:1000; }
-.nav { display: flex; align-items: center; justify-content: space-between; padding: 10px 0; }
-.nav-links { list-style: none; display: flex; gap: 20px; }
-.nav-links a { text-decoration: none; color: #333; }
-.nav-toggle { display: none; }
+/* ---------- Header & Nav ---------- */
+.site-header { position: sticky; top: 0; background: #fff; z-index: 1200; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+.nav { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; }
+.brand { font-weight: 700; font-size: 20px; }
+.accent { color: #e67e22; }
 
-/* DROPDOWN */
+/* Nav links */
+.nav-links { list-style: none; display: flex; gap: 24px; align-items: center; }
+.nav-links li { position: relative; }
+.nav-links a { color: #222; font-size: 15px; padding: 6px 4px; display: inline-block; }
+
+/* Actions */
+.nav-actions { display: flex; gap: 8px; align-items: center; }
+.btn { padding: 9px 14px; border-radius: 6px; cursor: pointer; border: none; font-size: 14px; text-decoration: none; display: inline-block; }
+.btn-primary { background: #e67e22; color: #fff; }
+.btn-outline { background: transparent; color: #e67e22; border: 1px solid #e67e22; }
+
+/* ---------- Dropdown ---------- */
 .dropdown { position: relative; }
+.dropdown-btn { cursor: pointer; display: inline-flex; align-items: center; gap: 6px; }
+.dropdown .arrow { transition: transform 0.25s ease; display: inline-block; font-size: 12px; }
+
+/* Hidden by default */
 .dropdown-menu {
-  display: none;
   position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  width: 260px;
   background: #fff;
-  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
   list-style: none;
-  border: 1px solid #ddd;
-}
-.dropdown:hover .dropdown-menu { display: block; }
-
-/* HERO */
-.hero { height: 90vh; position: relative; overflow: hidden; }
-.hero-slideshow img {
-  width: 100%; height: 100%; object-fit: cover;
-  position: absolute; top:0; left:0; opacity:0; transition: opacity 1s ease;
-}
-.slide.active { opacity: 1; }
-.hero-content { position: absolute; bottom: 20%; left: 5%; color: #fff; max-width: 500px; }
-
-/* DESTINATIONS */
-.dest-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 10px; }
-.dest-grid img { width: 100%; height: 200px; object-fit: cover; }
-
-/* WHY US */
-.why-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; }
-.why-card { background:#f4f4f4; padding:20px; text-align:center; border-radius:6px; }
-
-/* GALLERY */
-.gallery-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 10px; }
-.gallery-grid img { width:100%; height:200px; object-fit:cover; cursor:pointer; }
-
-/* MODAL */
-.modal {
-  display:none;
-  position:fixed;
-  top:0; left:0; width:100%; height:100%;
-  background:rgba(0,0,0,0.8);
-  justify-content:center;
-  align-items:center;
-}
-.modal img { width:60%; }
-#modal-close {
-  position:absolute; top:20px; right:40px;
-  font-size:40px; cursor:pointer; color:#fff;
+  padding: 8px 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s;
+  z-index: 999;
 }
 
-/* BOOKING */
-.booking-form { display:flex; flex-direction:column; gap:10px; max-width:400px; }
+.dropdown-menu li a { display: block; padding: 10px 14px; color: #333; font-size: 14px; }
+.dropdown-menu li a:hover { background: #f5f5f5; }
 
-/* BUTTONS */
-.btn-primary {
-  background:#e67e22; border:none; padding:10px 20px;
-  color:#fff; border-radius:4px; cursor:pointer;
+/* Visible state */
+.dropdown.show .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+.dropdown.show .arrow { transform: rotate(180deg); }
+
+/* ---------- Mobile Nav ---------- */
+.nav-toggle { display: none; background: none; border: none; font-size: 22px; cursor: pointer; }
+@media (max-width: 880px) {
+  .nav-toggle { display: inline-block; }
+  .nav-links { position: absolute; top: 64px; left: 0; right: 0; background: #fff; padding: 12px 0; flex-direction: column; gap: 0; display: none; }
+  .nav-links.open { display: flex; }
+  .nav-links li { width: 100%; text-align: center; padding: 8px 0; }
+  .dropdown-menu { position: static; width: 100%; box-shadow: none; transform: none; opacity: 1; visibility: visible; display: none; }
+  .dropdown.show .dropdown-menu { display: block; }
+  .nav-actions { display: none; }
 }
 
-/* WHATSAPP FLOAT */
-.wa-float {
-  position:fixed; right:20px; bottom:20px;
-  background:#25D366; padding:12px 14px;
-  border-radius:50%; color:#fff; font-size:25px;
-  text-decoration:none;
+/* ---------- Hero ---------- */
+.hero { position: relative; height: 78vh; min-height: 420px; overflow: hidden; color: #fff; display: flex; align-items: flex-end; }
+.hero-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.35); z-index: 1; }
+.hero-slideshow { position: absolute; inset: 0; z-index: 0; }
+.hero-slideshow img { width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; opacity: 0; transition: opacity 1s ease-in-out; }
+.hero-slideshow img.active { opacity: 1; }
+.hero-content { z-index: 2; padding: 36px 0; width: 100%; }
+.hero-content h1 { font-size: 32px; margin-bottom: 10px; }
+.lead { font-size: 16px; margin-bottom: 12px; }
+.ctas { display: flex; gap: 12px; margin-bottom: 8px; }
+
+/* ---------- Sections ---------- */
+.section { padding: 48px 0; }
+.section-title { font-size: 22px; margin-bottom: 18px; }
+
+/* ---------- Safari Grid / Cards ---------- */
+.safari-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.safari-card { background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 6px 18px rgba(0,0,0,0.06); padding-bottom: 12px; }
+.safari-card img { width: 100%; height: 160px; object-fit: cover; display: block; }
+.safari-card h3 { font-size: 16px; padding: 12px 14px 0; }
+.safari-card p { padding: 8px 14px; color: #555; font-size: 14px; }
+.price-box { display: flex; gap: 10px; padding: 0 14px 12px; font-weight: 600; color: #333; }
+
+/* ---------- Dest cards ---------- */
+.dest-cards { display: flex; gap: 12px; flex-wrap: wrap; }
+.dest-card img { width: 100%; height: 160px; object-fit: cover; border-radius: 8px; }
+
+/* ---------- Booking Form ---------- */
+.booking-form { background: #fff; padding: 18px; border-radius: 8px; box-shadow: 0 8px 20px rgba(0,0,0,0.04); }
+.booking-form .row.two { display: flex; gap: 12px; margin-bottom: 10px; }
+.booking-form input, .booking-form textarea, .booking-form select { padding: 10px; border: 1px solid #ddd; border-radius: 6px; width: 100%; font-size: 14px; }
+.booking-form textarea { min-height: 100px; resize: vertical; }
+.form-actions { display: flex; gap: 12px; margin-top: 12px; }
+
+/* ---------- Why Grid ---------- */
+.why-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
+.why-card { background: #fff; padding: 12px; border-radius: 8px; box-shadow: 0 6px 14px rgba(0,0,0,0.05); text-align: center; }
+
+/* ---------- Gallery ---------- */
+.gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+.gallery-grid img { width: 100%; height: 140px; object-fit: cover; cursor: pointer; border-radius: 6px; }
+
+/* ---------- About / Reviews ---------- */
+.about-grid { display: grid; grid-template-columns: 260px 1fr; gap: 18px; align-items: center; }
+.about-img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; }
+.reviews-list .review { display: block; background: #fff; padding: 12px; border-radius: 8px; margin-bottom: 10px; }
+
+/* ---------- Footer ---------- */
+.site-footer { background: #fafafa; padding: 18px 0; font-size: 14px; }
+.site-footer a { color: #333; }
+
+/* ---------- WhatsApp ---------- */
+.wa-float { position: fixed; right: 18px; bottom: 22px; background: #25D366; color: #fff; width: 52px; height: 52px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; font-size: 22px; z-index: 1400; text-decoration: none; box-shadow: 0 6px 18px rgba(0,0,0,0.12); }
+
+/* ---------- Image Modal ---------- */
+.img-modal { position: fixed; inset: 0; display: none; align-items: center; justify-content: center; background: rgba(0,0,0,0.75); z-index: 2000; padding: 24px; }
+.img-modal.show { display: flex; }
+.img-modal img { max-width: 100%; max-height: 90vh; border-radius: 6px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+.modal-close { position: absolute; top: 20px; right: 20px; background: transparent; border: none; color: #fff; font-size: 22px; cursor: pointer; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1000px) {
+  .safari-grid { grid-template-columns: repeat(2,1fr); }
+  .gallery-grid { grid-template-columns: repeat(3,1fr); }
+  .why-grid { grid-template-columns: repeat(2,1fr); }
 }
 
-/* FOOTER */
-.site-footer { text-align:center; padding:20px 0; background:#333; color:#fff; margin-top:40px; }
+@media (max-width: 640px) {
+  .safari-grid { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: repeat(2,1fr); }
+  .about-grid { grid-template-columns: 1fr; }
+  .hero-content h1 { font-size: 22px; }
+}
